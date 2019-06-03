@@ -16,6 +16,10 @@
 		DB91305C22A54CFD00AC4EC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB91305A22A54CFD00AC4EC1 /* LaunchScreen.storyboard */; };
 		DB91306722A54CFD00AC4EC1 /* ContactListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91306622A54CFD00AC4EC1 /* ContactListTests.swift */; };
 		DB91307222A54CFD00AC4EC1 /* ContactListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91307122A54CFD00AC4EC1 /* ContactListUITests.swift */; };
+		DB91308122A54FA000AC4EC1 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91308022A54FA000AC4EC1 /* ContactModel.swift */; };
+		DB91308422A5509200AC4EC1 /* ContactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91308322A5509200AC4EC1 /* ContactsService.swift */; };
+		DB91308722A5513600AC4EC1 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91308622A5513600AC4EC1 /* Configuration.swift */; };
+		DB91308A22A55ACD00AC4EC1 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91308922A55ACD00AC4EC1 /* ContactTableViewCell.swift */; };
 		EE21773799AB0296FD093831 /* Pods_ContactList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813FA7F8756693113169BC19 /* Pods_ContactList.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +62,10 @@
 		DB91306D22A54CFD00AC4EC1 /* ContactListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB91307122A54CFD00AC4EC1 /* ContactListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListUITests.swift; sourceTree = "<group>"; };
 		DB91307322A54CFD00AC4EC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB91308022A54FA000AC4EC1 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		DB91308322A5509200AC4EC1 /* ContactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsService.swift; sourceTree = "<group>"; };
+		DB91308622A5513600AC4EC1 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		DB91308922A55ACD00AC4EC1 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		F0631C1CE068E18BEE598AC5 /* Pods_ContactListUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContactListUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,6 +145,10 @@
 		DB91305022A54CFB00AC4EC1 /* ContactList */ = {
 			isa = PBXGroup;
 			children = (
+				DB91308822A55A1A00AC4EC1 /* Views */,
+				DB91308522A5511C00AC4EC1 /* Configuration */,
+				DB91308222A5507D00AC4EC1 /* Services */,
+				DB91307F22A54F8E00AC4EC1 /* Models */,
 				DB91305122A54CFB00AC4EC1 /* AppDelegate.swift */,
 				DB91305322A54CFB00AC4EC1 /* ViewController.swift */,
 				DB91305522A54CFB00AC4EC1 /* Main.storyboard */,
@@ -163,6 +175,38 @@
 				DB91307322A54CFD00AC4EC1 /* Info.plist */,
 			);
 			path = ContactListUITests;
+			sourceTree = "<group>";
+		};
+		DB91307F22A54F8E00AC4EC1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB91308022A54FA000AC4EC1 /* ContactModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DB91308222A5507D00AC4EC1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DB91308322A5509200AC4EC1 /* ContactsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DB91308522A5511C00AC4EC1 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				DB91308622A5513600AC4EC1 /* Configuration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		DB91308822A55A1A00AC4EC1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB91308922A55ACD00AC4EC1 /* ContactTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,8 +419,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB91308A22A55ACD00AC4EC1 /* ContactTableViewCell.swift in Sources */,
+				DB91308422A5509200AC4EC1 /* ContactsService.swift in Sources */,
+				DB91308722A5513600AC4EC1 /* Configuration.swift in Sources */,
 				DB91305422A54CFB00AC4EC1 /* ViewController.swift in Sources */,
 				DB91305222A54CFB00AC4EC1 /* AppDelegate.swift in Sources */,
+				DB91308122A54FA000AC4EC1 /* ContactModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,7 +603,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DVXNNDG4U4;
 				INFOPLIST_FILE = ContactList/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.giacomuzzi.ContactList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -571,7 +622,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DVXNNDG4U4;
 				INFOPLIST_FILE = ContactList/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.giacomuzzi.ContactList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -588,7 +642,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DVXNNDG4U4;
 				INFOPLIST_FILE = ContactListTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.giacomuzzi.ContactListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -606,7 +664,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DVXNNDG4U4;
 				INFOPLIST_FILE = ContactListTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.giacomuzzi.ContactListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -623,7 +685,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DVXNNDG4U4;
 				INFOPLIST_FILE = ContactListUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.giacomuzzi.ContactListUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -640,7 +706,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DVXNNDG4U4;
 				INFOPLIST_FILE = ContactListUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.giacomuzzi.ContactListUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
