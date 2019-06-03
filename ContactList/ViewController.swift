@@ -33,6 +33,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
 
         self.tableView.estimatedRowHeight = CGFloat(K.estimatedRowHeight.rawValue)
+        self.tableView.rowHeight = UITableView.automaticDimension
     }
 
     //MARK: TableViewDelegate

@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 
 class ContactsService: NSObject {
+
     func getAllContacts(completion: @escaping ([Contact]) -> Void) -> Void {
         AF.request("\(Servers.production)\(Routes.listContacts)")
             .validate(statusCode: 200..<300)
@@ -22,5 +23,4 @@ class ContactsService: NSObject {
                 completion(contatos)
             }
     }
-
 }
