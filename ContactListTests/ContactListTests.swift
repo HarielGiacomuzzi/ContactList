@@ -10,18 +10,41 @@ import XCTest
 @testable import ContactList
 
 class ContactListTests: XCTestCase {
+    private var contactService: ContactsService?
+
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.contactService = ContactsService()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        self.contactService = nil
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGetAllContacts() {
+        self.contactService?.getAllContacts { contacts in
+            assert(contacts.count != 0)
+        }
+    }
+
+    func testGetContactById() {
+        self.contactService?.searchById(id: 1) { contact in
+            assert(contact.nome == "Guilherme Lacerda")
+        }
+    }
+
+    func testInsertContact() {
+        let newContact = Contact(nome: "Test Contact", email: "a@a.com", telefone: "51 99999-9999")
+        self.contactService?.insertNewContact(contact: newContact) {
+            self.contactService?.getAllContacts { contacts in
+                contacts.forEach {contact in
+                    if contact.nome == "Test Contact" {
+                        assert(true)
+                    }
+                }
+                assert(false)
+            }
+        }
     }
 
     func testPerformanceExample() {
