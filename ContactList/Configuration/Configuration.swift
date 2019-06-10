@@ -18,6 +18,8 @@ enum Servers: String, CustomStringConvertible{
 
 enum Routes: String, CustomStringConvertible{
     case listContacts = "contatos"
+    case insertContact = "contato"
+    case searchById = "contato/"
 
     var description: String {
         return self.rawValue

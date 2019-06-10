@@ -9,7 +9,7 @@
 import Foundation
 
 class Contact: Decodable {
-    let id: Int
+    let id: Int?
     let nome: String
     let email: String
     let telefone: String
@@ -17,10 +17,17 @@ class Contact: Decodable {
 
     required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: ContactCodingKeys.self)
-        id = try values.decode(Int.self, forKey: .id)
+        id = try values.decodeIfPresent(Int.self, forKey: .id)
         nome = try values.decode(String.self, forKey: .nome)
         email = try values.decode(String.self, forKey: .email)
         telefone = try values.decode(String.self, forKey: .telefone)
+    }
+
+    init(nome: String, email: String, telefone: String) {
+        self.nome = nome
+        self.email = email
+        self.telefone = telefone
+        self.id = nil
     }
 }
 

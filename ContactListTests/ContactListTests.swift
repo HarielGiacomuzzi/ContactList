@@ -18,12 +18,32 @@ class ContactListTests: XCTestCase {
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        self.contactService = nil
     }
 
     func testGetAllContacts() {
         self.contactService?.getAllContacts { contacts in
             assert(contacts.count != 0)
+        }
+    }
+
+    func testGetContactById() {
+        self.contactService?.searchById(id: 1) { contact in
+            assert(contact.nome == "Guilherme Lacerda")
+        }
+    }
+
+    func testInsertContact() {
+        let newContact = Contact(nome: "Test Contact", email: "a@a.com", telefone: "51 99999-9999")
+        self.contactService?.insertNewContact(contact: newContact) {
+            self.contactService?.getAllContacts { contacts in
+                contacts.forEach {contact in
+                    if contact.nome == "Test Contact" {
+                        assert(true)
+                    }
+                }
+                assert(false)
+            }
         }
     }
 

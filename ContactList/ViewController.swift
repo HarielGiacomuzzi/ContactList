@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     //MARK: Local Variables
     private var contacts: [Contact] = []
+    fileprivate let contactsService = ContactsService()
 
     //MARK: Outlets
     @IBOutlet var tableView: UITableView!
@@ -25,15 +26,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let service = ContactsService()
+        self.tableView.estimatedRowHeight = CGFloat(K.estimatedRowHeight.rawValue)
+        self.tableView.rowHeight = UITableView.automaticDimension
+    }
 
-        service.getAllContacts {contacts in
+    override func viewWillAppear(_ animated: Bool) {
+        self.contactsService.getAllContacts {contacts in
             self.contacts = contacts
             self.tableView.reloadData()
         }
-
-        self.tableView.estimatedRowHeight = CGFloat(K.estimatedRowHeight.rawValue)
-        self.tableView.rowHeight = UITableView.automaticDimension
     }
 
     //MARK: TableViewDelegate
